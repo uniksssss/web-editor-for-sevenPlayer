@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #16503B;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+    border-bottom: 1px solid #16503B;
+    margin-bottom: 10px;
+}
+
+.header_name{
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #16503B;
+}
+
+.header_logo{
+    max-width: 87px;
+}

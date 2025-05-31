@@ -1,0 +1,28 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.editor-name {
+    text-align: center;
+}
+
+.preview {
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+    background: none;
+}
+
+.editor_button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    background-color: #259B81;
+    border: none;
+    margin: 20px;
+}
+
+.editor_button:hover {
+    background-color: #1b876f;
+}

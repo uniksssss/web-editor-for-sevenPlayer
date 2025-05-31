@@ -1,0 +1,102 @@
+.template-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.template {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 330px;
+    height: 330px;
+}
+
+.template img.background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.birthday-bg,
+.matchday-bg {
+    max-width: 330px;
+    max-height: 330px;
+}
+
+.birthday-player-photo,
+.matchday-player-photo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transform: translateX(-50%);
+}
+
+.birthday-name {
+    position: absolute;
+    color: white;
+    top: 45px;
+    font-size: 24px;
+    font-weight: 200;
+    font-family: inglobal;
+    text-align: center;
+    width: 100%;
+}
+
+.matchday-data {
+    position: absolute;
+    bottom: 20px;
+    background-color: white;
+    padding: 2px;
+    color: #259B81;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.matchday-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0px;
+}
+
+.matchday-data_location {
+    text-align: center;
+    font-size: 13px;
+    margin: 0;
+}
+
+.matchday-data_date,
+.matchday-data_time {
+    margin: 0;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.logo_home {
+    position: absolute;
+    max-width: 60px;
+    top: 38%;
+    left: 24px;
+    z-index: 1;
+}
+
+.logo_away {
+    position: absolute;
+    max-width: 60px;
+    top: 38%;
+    right: 24px;
+    z-index: 1;
+}
