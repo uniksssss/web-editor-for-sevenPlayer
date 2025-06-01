@@ -38,7 +38,6 @@ const waitForImagesToLoad = (element: HTMLElement) => {
 
 const handleDownload = async () => {
   if (!previewRef.current) return;
-
   const templateElement = previewRef.current.querySelector('.template') as HTMLElement;
   if (!templateElement) return;
 
@@ -54,17 +53,10 @@ const handleDownload = async () => {
     onclone: (clonedDoc) => {
       const clonedElement = clonedDoc.querySelector('.template') as HTMLElement;
       if (clonedElement) {
-        clonedElement.style.transform = 'none';
-        
         const playerPhotos = clonedElement.querySelectorAll('.birthday-player-photo, .matchday-player-photo');
         playerPhotos.forEach(img => {
           const imgElement = img as HTMLImageElement;
-          imgElement.style.width = '';
-          imgElement.style.height = '';
-          imgElement.style.maxWidth = '280px';
-          imgElement.style.maxHeight = '280px';
-          imgElement.style.objectFit = 'none';
-          imgElement.style.objectPosition = 'center';
+          imgElement.style.transform = 'translateX(-50%)';
         });
 
         const logos = clonedElement.querySelectorAll('.logo_home, .logo_away');
@@ -74,6 +66,14 @@ const handleDownload = async () => {
           imgElement.style.width = '60px';
           imgElement.style.height = 'auto';
           imgElement.style.objectFit = 'contain';
+          
+          // Специальная обработка для SVG
+          if (imgElement.src.endsWith('.svg')) {
+            imgElement.style.width = '60px';
+            imgElement.style.height = '60px';
+            imgElement.style.objectFit = 'contain';
+            imgElement.style.transform = 'none';
+          }
         });
 
         const background = clonedElement.querySelector('.background') as HTMLImageElement;

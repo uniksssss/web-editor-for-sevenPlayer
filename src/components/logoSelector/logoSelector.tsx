@@ -7,18 +7,18 @@ interface LogoSelectorProps {
 }
 
 const logos = [
-    { id: 'uralochka', name: 'Уралочка', path: '/logos/uralochka.png' },
-    { id: 'lokomotiv', name: 'Локомотив', path: '/logos/lokomotiv.png' },
-    { id: 'tulitsa', name: 'Тулица', path: '/logos/tulitsa.png' },
-    { id: 'omichka', name: 'Омичка', path: '/logos/omichka.svg' },
-    { id: 'minsk', name: 'Минск', path: '/logos/minsk.jpg' },
-    { id: 'leningradka', name: 'Ленинградка', path: '/logos/leningradka.png' },
-    { id: 'zarechye', name: 'Заречье', path: '/logos/zarechye.svg' },
-    { id: 'enisey', name: 'Енисей', path: '/logos/enisey.svg' },
-    { id: 'dinamoMetar', name: 'Динамо-Метар', path: '/logos/dinamoMetar.png' },
-    { id: 'dinamoAkBars', name: 'Динамо-Ак Барс', path: '/logos/dinamoAkBars.svg' },
-    { id: 'dinamoKrasnodar', name: 'Динамо-Краснодар', path: '/logos/dinamoKrasnodar.png' },
-    { id: 'proton', name: 'Протон', path: '/logos/proton.svg' },
+    { id: 'uralochka', name: 'Уралочка', path: '/src/assets/logos/uralochka.png' },
+    { id: 'lokomotiv', name: 'Локомотив', path: '/src/assets/logos/loko.png' },
+    { id: 'tulitsa', name: 'Тулица', path: '/src/assets/logos/tulitsa.png' },
+    { id: 'omichka', name: 'Омичка', path: '/src/assets/logos/omichka.png' },
+    { id: 'minsk', name: 'Минск', path: '/src/assets/logos/minsk.jpg' },
+    { id: 'leningradka', name: 'Ленинградка', path: '/src/assets/logos/leningradka.png' },
+    { id: 'zarechye', name: 'Заречье', path: '/src/assets/logos/zarechye.png' },
+    { id: 'enisey', name: 'Енисей', path: '/src/assets/logos/enisey.png' },
+    { id: 'dinamoMetar', name: 'Динамо-Метар', path: '/src/assets/logos/dinamoMetar.png' },
+    { id: 'dinamoAkBars', name: 'Динамо-Ак Барс', path: '/src/assets/logos/dinamoAkBars.png' },
+    { id: 'dinamoKrasnodar', name: 'Динамо-Краснодар', path: '/src/assets/logos/dinamoKrasnodar.png' },
+    { id: 'proton', name: 'Протон', path: '/src/assets/logos/proton.png' },
 ];
 
 export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorProps) {
