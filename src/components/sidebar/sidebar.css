@@ -8,40 +8,41 @@
   border-right: 1px solid #ddd;
 }
 
-.sidebar-field {
+.field {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
-.sidebar-label {
+.field label {
   font-size: 14px;
   font-weight: 600;
   color: #16503B;
-  margin-bottom: 6px;
 }
 
-.sidebar-text{
-    font-size: 12px;
-}
-
-.sidebar-input {
-  padding: 10px 12px;
-  font-size: 14px;
+.field input,
+.field select {
+  padding: 8px 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  background-color: #fff;
-  transition: border 0.2s ease;
-}
-
-.sidebar-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
-}
-
-.sidebar-input-file {
-  padding: 6px 0;
-  border: none;
-  background: none;
+  border-radius: 4px;
   font-size: 14px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #16503B;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.date-inputs input {
+  width: 100px;
+}
+
+.date-inputs select {
+  flex: 1;
 }

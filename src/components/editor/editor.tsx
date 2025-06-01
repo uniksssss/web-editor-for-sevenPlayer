@@ -24,23 +24,37 @@ const handleChange = (fieldId: string, value: any) => {
 setFormData((prev) => ({ ...prev, [fieldId]: value }));
 };
 
-const handleDownload = async () => {
-    if (!previewRef.current) return;
-
-    const templateElement = previewRef.current.querySelector('.template');
-    if (!templateElement) return;
-
-    const canvas = await html2canvas(previewRef.current, {
-        backgroundColor: null,
-        scale: 2,
+const waitForImagesToLoad = (element: HTMLElement) => {
+  const images = element.querySelectorAll('img');
+  const promises = Array.from(images).map((img) => {
+    if (img.complete) return Promise.resolve();
+    return new Promise<void>((resolve) => {
+      img.onload = img.onerror = () => resolve();
     });
-
-    const link = document.createElement('a');
-    link.download = 'template.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+  });
+  return Promise.all(promises);
 };
 
+
+const handleDownload = async () => {
+  if (!previewRef.current) return;
+
+  const templateElement = previewRef.current.querySelector('.template') as HTMLElement;
+  if (!templateElement) return;
+
+  await waitForImagesToLoad(templateElement);
+
+  const canvas = await html2canvas(templateElement, {
+    backgroundColor: null,
+    scale: 3,
+    useCORS: true,
+  });
+
+  const link = document.createElement('a');
+  link.download = 'template.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+};
 
 
 const formattedDate =

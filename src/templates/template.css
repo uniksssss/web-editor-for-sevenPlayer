@@ -11,6 +11,8 @@
     overflow: hidden;
     width: 330px;
     height: 330px;
+    margin: 0;
+    padding: 0;
 }
 
 .template img.background {
@@ -39,6 +41,18 @@
     object-fit: cover;
     transform: translateX(-50%);
 }
+
+.matchday-player-photo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    /* width: 300px; */
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
+    transform: translateX(-50%);
+}
+
 
 .birthday-name {
     position: absolute;

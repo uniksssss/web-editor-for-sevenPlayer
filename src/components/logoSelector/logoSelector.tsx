@@ -4,7 +4,6 @@ import './logoSelector.css';
 interface LogoSelectorProps {
     onSelect: (logoPath: string) => void;
     selectedLogo?: string;
-    label: string;
 }
 
 const logos = [
@@ -22,12 +21,11 @@ const logos = [
     { id: 'zarechye', name: 'Заречье-Одинцово', path: '/src/assets/logos/zarechye.svg' },
 ];
 
-export default function LogoSelector({ onSelect, selectedLogo, label }: LogoSelectorProps) {
+export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="logo-selector">
-            <label>{label}</label>
             <div className="logo-selector-button" onClick={() => setIsOpen(!isOpen)}>
                 {selectedLogo ? (
                     <img src={selectedLogo} alt="Selected logo" className="selected-logo" />

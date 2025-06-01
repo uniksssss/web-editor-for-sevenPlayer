@@ -52,20 +52,29 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                             value={formData.day || ''}
                             onChange={(e) => onChange('day', e.target.value)}
                         />
-                        <input
-                            type="number"
-                            min="1"
-                            max="12"
-                            placeholder="Месяц"
+                        <select
                             value={formData.month || ''}
                             onChange={(e) => onChange('month', e.target.value)}
-                        />
+                        >
+                            <option value="">Месяц</option>
+                            <option value="01">Январь</option>
+                            <option value="02">Февраль</option>
+                            <option value="03">Март</option>
+                            <option value="04">Апрель</option>
+                            <option value="05">Май</option>
+                            <option value="06">Июнь</option>
+                            <option value="07">Июль</option>
+                            <option value="08">Август</option>
+                            <option value="09">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
+                        </select>
                     </div>
                 );
             case 'logo-selector':
                 return (
                     <LogoSelector
-                        label={field.label}
                         selectedLogo={formData[field.id]}
                         onSelect={(logoPath) => onChange(field.id, logoPath)}
                     />
