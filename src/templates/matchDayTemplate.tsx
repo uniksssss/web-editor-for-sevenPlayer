@@ -5,14 +5,14 @@ type MatchDayTemplateProps = {
   date?: string;
   time?: string;
   location?: string;
-  photo?: File;
+  photo?: File | string;
   homeLogo?: string;
   awayLogo?: string;
 };
 
 const MatchDayTemplate = forwardRef<HTMLDivElement, MatchDayTemplateProps>(
   ({ date, time, location, photo, homeLogo, awayLogo }, ref) => {
-    const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : null;
+    const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : photo;
 
     return (
       <div className="template-wrapper">

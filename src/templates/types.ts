@@ -1,4 +1,4 @@
-export type FieldType = 'text' | 'image' | 'date' | 'time' | 'custom-date' | 'logo-selector';
+export type FieldType = 'text' | 'image' | 'date' | 'time' | 'custom-date' | 'logo-selector' | 'player-photo-selector';
 
 export interface TemplateField {
   id: string;

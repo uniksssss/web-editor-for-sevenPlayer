@@ -31,28 +31,33 @@
     max-height: 330px;
 }
 
-.birthday-player-photo,
-.matchday-player-photo {
+.birthday-player-photo {
     position: absolute;
     bottom: 0px;
     left: 50%;
-    width: 250px;
-    height: 250px;
+    min-width: 250px;
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
     object-fit: cover;
-    transform: translateX(-50%);
-}
-
-.matchday-player-photo {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    /* width: 300px; */
-    height: 280px;
-    object-fit: contain;
     object-position: center;
     transform: translateX(-50%);
 }
 
+.matchday-player-photo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    min-width: 250px;
+    max-width: 280px;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-50%);
+}
 
 .birthday-name {
     position: absolute;

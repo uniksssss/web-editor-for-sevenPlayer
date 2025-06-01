@@ -20,6 +20,13 @@
   color: #16503B;
 }
 
+.field-hint {
+  font-size: 12px;
+  font-weight: normal;
+  color: #666;
+  font-style: italic;
+}
+
 .field input,
 .field select {
   padding: 8px 12px;

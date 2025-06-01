@@ -10,7 +10,7 @@ type BirthdayTemplateProps = {
 
 export const BirthdayTemplate = forwardRef<HTMLDivElement, BirthdayTemplateProps>(
   ({ firstName, lastName, photo }, ref) => {
-    const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : (typeof photo === 'string' ? photo : null);
+    const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : photo;
 
     return (
       <div className="template-wrapper">
@@ -24,4 +24,4 @@ export const BirthdayTemplate = forwardRef<HTMLDivElement, BirthdayTemplateProps
   }
 );
 
-BirthdayTemplate.displayName = 'BirthdayTemplate'; // Для удобства дебага
+BirthdayTemplate.displayName = 'BirthdayTemplate';

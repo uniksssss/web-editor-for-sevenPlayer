@@ -1,6 +1,7 @@
 import type { TemplateField } from '../../templates/types';
 import './sidebar.css';
 import LogoSelector from '../logoSelector/logoSelector';
+import PlayerPhotoSelector from '../playerPhotoSelector/playerPhotoSelector';
 
 interface SidebarProps {
     fields: TemplateField[];
@@ -10,6 +11,9 @@ interface SidebarProps {
 
 export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
     const renderField = (field: TemplateField) => {
+        const [label, hint] = field.label.split(' (');
+        const formattedHint = hint ? `(${hint}` : '';
+
         switch (field.type) {
             case 'text':
                 return (
@@ -17,7 +21,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         type="text"
                         value={formData[field.id] || ''}
                         onChange={(e) => onChange(field.id, e.target.value)}
-                        placeholder={field.label}
+                        placeholder={label}
                     />
                 );
             case 'image':
@@ -79,6 +83,13 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         onSelect={(logoPath) => onChange(field.id, logoPath)}
                     />
                 );
+            case 'player-photo-selector':
+                return (
+                    <PlayerPhotoSelector
+                        selectedPhoto={formData[field.id]}
+                        onSelect={(photoPath) => onChange(field.id, photoPath)}
+                    />
+                );
             default:
                 return null;
         }
@@ -86,12 +97,18 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
 
     return (
         <div className="sidebar">
-            {fields.map((field) => (
-                <div key={field.id} className="field">
-                    <label>{field.label}</label>
-                    {renderField(field)}
-                </div>
-            ))}
+            {fields.map((field) => {
+                const [label, hint] = field.label.split(' (');
+                const formattedHint = hint ? `(${hint}` : '';
+                
+                return (
+                    <div key={field.id} className="field">
+                        <label>{label}</label>
+                        {formattedHint && <span className="field-hint">{formattedHint}</span>}
+                        {renderField(field)}
+                    </div>
+                );
+            })}
         </div>
     );
 }

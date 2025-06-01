@@ -8,7 +8,7 @@ export const templates: TemplateConfig[] = [
     fields: [
       { id: 'firstName', label: 'Имя', type: 'text' },
       { id: 'lastName', label: 'Фамилия', type: 'text' },
-      { id: 'photo', label: 'Фото', type: 'image' },
+      { id: 'photo', label: 'Фото (при добавлении своего фото заранее удаляйте фон)', type: 'player-photo-selector' },
     ],
   },
   {
@@ -21,7 +21,7 @@ export const templates: TemplateConfig[] = [
       { id: 'location', label: 'Место', type: 'text' },
       { id: 'homeLogo', label: 'Логотип хозяев', type: 'logo-selector' },
       { id: 'awayLogo', label: 'Логотип гостей', type: 'logo-selector' },
-      { id: 'photo', label: 'Фото игрока', type: 'image' },
+      { id: 'photo', label: 'Фото игрока (при добавлении своего фото заранее удаляйте фон)', type: 'player-photo-selector' },
     ],
   },
 ];

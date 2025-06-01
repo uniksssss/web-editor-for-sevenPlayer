@@ -46,13 +46,49 @@ const handleDownload = async () => {
 
   const canvas = await html2canvas(templateElement, {
     backgroundColor: null,
-    scale: 3,
+    scale: 4,
     useCORS: true,
+    allowTaint: true,
+    imageTimeout: 0,
+    logging: false,
+    onclone: (clonedDoc) => {
+      const clonedElement = clonedDoc.querySelector('.template') as HTMLElement;
+      if (clonedElement) {
+        clonedElement.style.transform = 'none';
+        
+        const playerPhotos = clonedElement.querySelectorAll('.birthday-player-photo, .matchday-player-photo');
+        playerPhotos.forEach(img => {
+          const imgElement = img as HTMLImageElement;
+          imgElement.style.width = '';
+          imgElement.style.height = '';
+          imgElement.style.maxWidth = '280px';
+          imgElement.style.maxHeight = '280px';
+          imgElement.style.objectFit = 'none';
+          imgElement.style.objectPosition = 'center';
+        });
+
+        const logos = clonedElement.querySelectorAll('.logo_home, .logo_away');
+        logos.forEach(img => {
+          const imgElement = img as HTMLImageElement;
+          imgElement.style.maxWidth = '60px';
+          imgElement.style.width = '60px';
+          imgElement.style.height = 'auto';
+          imgElement.style.objectFit = 'contain';
+        });
+
+        const background = clonedElement.querySelector('.background') as HTMLImageElement;
+        if (background) {
+          background.style.width = '100%';
+          background.style.height = '100%';
+          background.style.objectFit = 'cover';
+        }
+      }
+    }
   });
 
   const link = document.createElement('a');
   link.download = 'template.png';
-  link.href = canvas.toDataURL('image/png');
+  link.href = canvas.toDataURL('image/png', 1.0);
   link.click();
 };
 
