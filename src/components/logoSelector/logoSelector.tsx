@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import './logoSelector.css';
 
 interface LogoSelectorProps {
@@ -6,23 +6,44 @@ interface LogoSelectorProps {
     selectedLogo?: string;
 }
 
-const logos = [
-    { id: 'uralochka', name: 'Уралочка', path: '/src/assets/logos/uralochka.png' },
-    { id: 'lokomotiv', name: 'Локомотив', path: '/src/assets/logos/loko.png' },
-    { id: 'tulitsa', name: 'Тулица', path: '/src/assets/logos/tulitsa.png' },
-    { id: 'omichka', name: 'Омичка', path: '/src/assets/logos/omichka.png' },
-    { id: 'minsk', name: 'Минск', path: '/src/assets/logos/minsk.jpg' },
-    { id: 'leningradka', name: 'Ленинградка', path: '/src/assets/logos/leningradka.png' },
-    { id: 'zarechye', name: 'Заречье', path: '/src/assets/logos/zarechye.png' },
-    { id: 'enisey', name: 'Енисей', path: '/src/assets/logos/enisey.png' },
-    { id: 'dinamoMetar', name: 'Динамо-Метар', path: '/src/assets/logos/dinamoMetar.png' },
-    { id: 'dinamoAkBars', name: 'Динамо-Ак Барс', path: '/src/assets/logos/dinamoAkBars.png' },
-    { id: 'dinamoKrasnodar', name: 'Динамо-Краснодар', path: '/src/assets/logos/dinamoKrasnodar.png' },
-    { id: 'proton', name: 'Протон', path: '/src/assets/logos/proton.png' },
-];
+const logoImports = import.meta.glob('../../assets/logos/*.{png,jpg,jpeg}', {
+    eager: true,
+    import: 'default',
+});
+
+
+const logoNamesMap: Record<string, string> = {
+    uralochka: 'Уралочка',
+    lokomotiv: 'Локомотив',
+    tulitsa: 'Тулица',
+    omichka: 'Омичка',
+    minsk: 'Минск',
+    leningradka: 'Ленинградка',
+    zarechye: 'Заречье',
+    enisey: 'Енисей',
+    dinamoMetar: 'Динамо-Метар',
+    dinamoAkBars: 'Динамо-Ак Барс',
+    dinamoKrasnodar: 'Динамо-Краснодар',
+    proton: 'Протон',
+};
 
 export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorProps) {
     const [isOpen, setIsOpen] = useState(false);
+
+    const logos = useMemo(() => {
+        return Object.entries(logoImports).map(([path, url]) => {
+            const id = path
+                .split('/')
+                .pop()!
+                .split('.')[0];
+
+            return {
+                id,
+                name: logoNamesMap[id] || id,
+                path: url as string,
+            };
+        });
+    }, []);
 
     return (
         <div className="logo-selector">
@@ -52,4 +73,4 @@ export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorPro
             )}
         </div>
     );
-} 
+}

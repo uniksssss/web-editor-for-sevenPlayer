@@ -66,14 +66,6 @@ const handleDownload = async () => {
           imgElement.style.width = '60px';
           imgElement.style.height = 'auto';
           imgElement.style.objectFit = 'contain';
-          
-          // Специальная обработка для SVG
-          if (imgElement.src.endsWith('.svg')) {
-            imgElement.style.width = '60px';
-            imgElement.style.height = '60px';
-            imgElement.style.objectFit = 'contain';
-            imgElement.style.transform = 'none';
-          }
         });
 
         const background = clonedElement.querySelector('.background') as HTMLImageElement;

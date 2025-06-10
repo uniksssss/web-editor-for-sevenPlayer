@@ -1,6 +1,7 @@
 .template-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100vw;
     box-sizing: border-box;
 }
@@ -35,7 +36,6 @@
     position: absolute;
     bottom: 0px;
     left: 50%;
-    min-width: 250px;
     max-width: 300px;
     max-height: 300px;
     width: auto;
@@ -43,17 +43,22 @@
     object-fit: cover;
     object-position: center;
     transform: translateX(-50%);
+    z-index: 0;
+}
+
+.birthday-obj{
+    position: absolute;
+    bottom: 0px;
+    width: 330px;
+    z-index: 0;
 }
 
 .matchday-player-photo {
     position: absolute;
-    bottom: 0px;
+    top: 30%;
     left: 50%;
-    min-width: 250px;
-    max-width: 280px;
-    max-height: 280px;
-    width: auto;
-    height: auto;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     object-position: center;
     transform: translateX(-50%);
@@ -61,26 +66,35 @@
 
 .birthday-name {
     position: absolute;
-    color: white;
-    top: 45px;
-    font-size: 24px;
+    bottom: 38px;
+    right: 10px;
+    font-size: 34px;
     font-weight: 200;
-    font-family: inglobal;
-    text-align: center;
-    width: 100%;
+    font-family: 'Buran USSR', sans-serif;
+    color: #FF0033;
+}
+
+.birthday-lastname{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 34px;
+    font-weight: 200;
+    font-family: 'Buran USSR', sans-serif;
+    color: #FF0033;
 }
 
 .matchday-data {
     position: absolute;
-    bottom: 20px;
-    background-color: white;
+    top: 40px;
     padding: 2px;
-    color: #259B81;
+    color: #FF0033;
     width: 100%;
     align-items: center;
     box-sizing: border-box;
     left: 50%;
     transform: translateX(-50%);
+    font-family: "Helvetica Neue"
 }
 
 .matchday-row {
@@ -93,8 +107,10 @@
 
 .matchday-data_location {
     text-align: center;
-    font-size: 13px;
+    font-size: 10px;
     margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: 200;
 }
 
 .matchday-data_date,
@@ -107,15 +123,44 @@
 .logo_home {
     position: absolute;
     max-width: 60px;
-    top: 38%;
-    left: 24px;
+    bottom: 42px;
+    left: 88px;
     z-index: 1;
 }
 
 .logo_away {
     position: absolute;
     max-width: 60px;
-    top: 38%;
-    right: 24px;
+    bottom: 42px;
+    right: 88px;
     z-index: 1;
+}
+
+.player-number-container{
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    border: #FF0033 solid 2px;
+    position: absolute;
+    right: 10px;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-28deg);
+}
+
+.player-number{
+    color: #FF0033;
+    font-family: "Helvetica Neue";
+}
+
+.player-role{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    font-family: Helvetica, sans-serif;
+    color: #16503B;
+    font-size: 14px;
 }

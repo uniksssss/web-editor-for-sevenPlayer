@@ -1,23 +1,43 @@
 import { forwardRef } from "react";
-import { birthdayTemlate } from "../assets/cards/cards";
+import { birthdayTemplate } from "../assets/cards/cards";
 import './template.css';
+import obj from "..//assets/cards/birthdayObj.png"
 
 type BirthdayTemplateProps = {
   firstName?: string;
   lastName?: string;
   photo?: File | string;
+  playerNumber: number;
+  playerRole: string;
+};
+
+const roleTranslations: Record<string, string> = {
+    attacker: "Нападающая",
+    blocker: "Блокирующая",
+    libero: "Либеро",
+    binder: "Связующая",
+    coach: "Тренер",
 };
 
 export const BirthdayTemplate = forwardRef<HTMLDivElement, BirthdayTemplateProps>(
-  ({ firstName, lastName, photo }, ref) => {
+  ({ firstName, lastName, photo, playerNumber, playerRole }, ref) => {
     const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : photo;
+    const translatedRole = playerRole ? roleTranslations[playerRole] : "";
 
     return (
       <div className="template-wrapper">
         <div className="template birthday" ref={ref}>
-          <img src={birthdayTemlate} alt="" className="background" />
+          <img src={birthdayTemplate} alt="" className="background" />
           {photoUrl && <img src={photoUrl} alt="" className="birthday-player-photo" />}
-          <h1 className="birthday-name">{firstName} {lastName}</h1>
+          <img src={obj} className="birthday-obj"></img>
+          <div className="player-number-container">
+            <p className="player-number">#{playerNumber}</p>
+          </div>
+          {translatedRole && (
+            <p className="player-role">{translatedRole}</p>
+          )}
+          <h1 className="birthday-name">{firstName}</h1>
+          <h1 className="birthday-lastname">{lastName}</h1>
         </div>
       </div>
     );

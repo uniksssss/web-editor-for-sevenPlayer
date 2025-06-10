@@ -12,7 +12,6 @@ interface SidebarProps {
 export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
     const renderField = (field: TemplateField) => {
         const [label, hint] = field.label.split(' (');
-        const formattedHint = hint ? `(${hint}` : '';
 
         switch (field.type) {
             case 'text':
@@ -89,6 +88,28 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         selectedPhoto={formData[field.id]}
                         onSelect={(photoPath) => onChange(field.id, photoPath)}
                     />
+                );
+            case 'role':
+                return(
+                    <select value={formData.month || ''}
+                            onChange={(e) => onChange(field.id, e.target.value)}
+                    >
+                        <option value="">Выберите амплуа</option>
+                        <option value="attacker">Нападающая</option>
+                        <option value='blocker'>Блокирующая</option>
+                        <option value='libero'>Либеро</option>
+                        <option value='binder'>Связующая</option>
+                        <option value='coach'>Тренер</option>
+                    </select>
+                );
+            case 'number':
+                return(
+                    <input 
+                        type='number'
+                        value={formData[field.id] || ''}
+                        onChange={(e) => onChange(field.id, e.target.value)}
+                        placeholder={label}>
+                    </input>
                 );
             default:
                 return null;

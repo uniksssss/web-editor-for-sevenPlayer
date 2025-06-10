@@ -1,5 +1,5 @@
-import test1 from '../cards/test1.png'
-import birthdayTemlate from '../cards/birthdayTemplate.png'
-import matchDayTemplate from '../cards/matchDayTemplate.png'
+import scoreTemplate from '../cards/scoreTemplate.png'
+import birthdayTemplate from '../cards/birthdayTemplateNew.png'
+import matchDayTemplate from '../cards/matchDayTemplateNew.png'
 
-export {test1, birthdayTemlate, matchDayTemplate}
+export {scoreTemplate, birthdayTemplate, matchDayTemplate}
