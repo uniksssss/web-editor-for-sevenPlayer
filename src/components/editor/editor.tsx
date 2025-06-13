@@ -20,9 +20,24 @@ const [formData, setFormData] = useState<Record<string, any>>({});
 
 if (!template) return <p>Шаблон не найден</p>;
 
-const handleChange = (fieldId: string, value: any) => {
-setFormData((prev) => ({ ...prev, [fieldId]: value }));
+const convertToBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 };
+
+const handleChange = async (fieldId: string, value: any) => {
+  if (value instanceof File) {
+    const base64 = await convertToBase64(value);
+    setFormData((prev) => ({ ...prev, [fieldId]: base64 }));
+  } else {
+    setFormData((prev) => ({ ...prev, [fieldId]: value }));
+  }
+};
+
 
 const waitForImagesToLoad = (element: HTMLElement) => {
   const images = element.querySelectorAll('img');

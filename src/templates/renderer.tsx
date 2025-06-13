@@ -10,7 +10,7 @@ export const renderTemplate = (templateId: string, values: Record<string, any>) 
     case 'birthday':
       return <BirthdayTemplate playerNumber={0} playerRole={""} {...values} />;
     case 'score':
-      return <ScoreTemplate mainHomeScore={0} mainAwayScore={0} extraScore={""}></ScoreTemplate>
+      return <ScoreTemplate mainHomeScore={0} mainAwayScore={0} extraScore={"00:00"} {...values}></ScoreTemplate>
     default:
       return <p>Нет шаблона</p>;
   }

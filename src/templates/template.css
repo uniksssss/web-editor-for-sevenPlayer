@@ -164,3 +164,59 @@
     color: #16503B;
     font-size: 14px;
 }
+
+.score{
+    position: absolute;
+    bottom: 22px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #BFFF00;
+    gap: 6px;
+}
+
+.score_main{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    gap: 60px;
+}
+
+.score_extra{
+    font-size: 12px;
+}
+
+.score_logo_home{
+    position: absolute;
+    max-width: 60px;
+    bottom: 26px;
+    left: 15px;
+    z-index: 1;
+}
+
+.score_logo_away{
+    position: absolute;
+    max-width: 60px;
+    bottom: 26px;
+    right: 15px;
+    z-index: 1;
+}
+
+.score_vector{
+    position: absolute;
+    top: 0;
+    width: 330px;
+}
+
+.score-player-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 330px;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+

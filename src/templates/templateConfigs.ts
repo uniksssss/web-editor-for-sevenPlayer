@@ -33,7 +33,7 @@ export const templates: TemplateConfig[] = [
     fields: [
       { id: 'mainHomeScore', label: 'Счёт домашней команды', type: 'number' },
       { id: 'mainAwayScore', label: 'Счёт команды гостей', type: 'number' },
-      { id: 'extraScore', label: 'Cчёт партий', type: 'text' },
+      { id: 'extraScore', label: 'Cчёт партий (вводим через пробел в формате 00:00 00:00 и т.д)', type: 'text' },
       { id: 'homeLogo', label: 'Логотип хозяев', type: 'logo-selector' },
       { id: 'awayLogo', label: 'Логотип гостей', type: 'logo-selector' },
       { id: 'photo', label: 'Фото', type: 'image' },

@@ -12,7 +12,7 @@ export default function StartScreen(){
                 <div className="start_wrapper">
                     <NavCard image={matchDayTemplate} title="Матч-день" to="/edit/match-day"/>
                     <NavCard image={birthdayTemplate} title="День рождения" to="/edit/birthday"/>
-                    <NavCard image={scoreTemplate} title="Счёт игры(пока не сделан)" to="/edit/score"/>
+                    <NavCard image={scoreTemplate} title="Счёт игры" to="/edit/score"/>
                 </div>
             </div>
         </>
