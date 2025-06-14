@@ -14,7 +14,6 @@ type ScoreTemplateProp ={
 
 export const ScoreTemplate = forwardRef<HTMLDivElement, ScoreTemplateProp>(
   ({ mainHomeScore, mainAwayScore, extraScore, photo, homeLogo, awayLogo }, ref) => {
-    // const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : photo;
     const photoUrl = typeof photo === 'string' ? photo : undefined;
 
     return(
@@ -22,8 +21,6 @@ export const ScoreTemplate = forwardRef<HTMLDivElement, ScoreTemplateProp>(
         <div className="template matchday" ref={ref}>
           {photoUrl && <img src={photoUrl} alt="" className="score-player-photo"/>}
           <img src={scoreTemplate} alt="" className="background" />
-          {/* {photoUrl && <img src={photoUrl} alt="" className="score-player-photo--back"/>} */}
-          {/* {photoUrl && <img src={photoUrl} alt="" className="score-player-photo"/>} */}
           <div className="score_logos">
             {homeLogo && <img src={homeLogo} alt="" className="score_logo_home" />}
             {awayLogo && <img src={awayLogo} alt="" className="score_logo_away"/>}

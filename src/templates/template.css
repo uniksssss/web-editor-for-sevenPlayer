@@ -46,7 +46,7 @@
     z-index: 0;
 }
 
-.birthday-obj{
+.birthday-obj {
     position: absolute;
     bottom: 0px;
     width: 330px;
@@ -55,7 +55,7 @@
 
 .matchday-player-photo {
     position: absolute;
-    top: 30%;
+    top: 27%;
     left: 50%;
     width: 150px;
     height: 150px;
@@ -74,7 +74,7 @@
     color: #FF0033;
 }
 
-.birthday-lastname{
+.birthday-lastname {
     position: absolute;
     bottom: 5px;
     right: 10px;
@@ -83,6 +83,18 @@
     font-family: 'Buran USSR', sans-serif;
     color: #FF0033;
 }
+
+.team-name {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FF0033;
+    font-size: 11px;
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+}
+
 
 .matchday-data {
     position: absolute;
@@ -123,7 +135,7 @@
 .logo_home {
     position: absolute;
     max-width: 60px;
-    bottom: 42px;
+    bottom: 47px;
     left: 88px;
     z-index: 1;
 }
@@ -131,12 +143,12 @@
 .logo_away {
     position: absolute;
     max-width: 60px;
-    bottom: 42px;
+    bottom: 47px;
     right: 88px;
     z-index: 1;
 }
 
-.player-number-container{
+.player-number-container {
     padding: 5px;
     width: 35px;
     height: 35px;
@@ -151,12 +163,12 @@
     transform: rotate(-28deg);
 }
 
-.player-number{
+.player-number {
     color: #FF0033;
     font-family: "Helvetica Neue";
 }
 
-.player-role{
+.player-role {
     position: absolute;
     bottom: 5px;
     left: 10px;
@@ -165,7 +177,7 @@
     font-size: 14px;
 }
 
-.score{
+.score {
     position: absolute;
     bottom: 22px;
     width: 100%;
@@ -177,18 +189,19 @@
     gap: 6px;
 }
 
-.score_main{
+.score_main {
     display: flex;
     justify-content: space-between;
     font-size: 24px;
     gap: 60px;
 }
 
-.score_extra{
+.score_extra {
     font-size: 12px;
 }
 
-.score_logo_home{
+.score_logo_home,
+.statistic_logo_home {
     position: absolute;
     max-width: 60px;
     bottom: 26px;
@@ -196,7 +209,8 @@
     z-index: 1;
 }
 
-.score_logo_away{
+.score_logo_away,
+.statistic_logo_away {
     position: absolute;
     max-width: 60px;
     bottom: 26px;
@@ -204,19 +218,60 @@
     z-index: 1;
 }
 
-.score_vector{
+.score_vector {
     position: absolute;
     top: 0;
     width: 330px;
 }
 
 .score-player-photo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 330px;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 330px;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
 }
 
+.statistic {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #BFFF00;
+    gap: 0px;
+}
+
+.statistic_main {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    gap: 60px;
+}
+
+.statistic_extra {
+    font-size: 11px;
+}
+
+.statistic_logo_away,
+.statistic_logo_home {
+    top: 85px;
+}
+
+.statistic_container {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #16503B;
+    font-size: 16px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 90px;
+    grid-row-gap: 7px;
+}

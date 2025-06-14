@@ -8,10 +8,11 @@ type MatchDayTemplateProps = {
   photo?: File | string;
   homeLogo?: string;
   awayLogo?: string;
+  teamVersion?: 'ntmk' | 'urgau';
 };
 
 const MatchDayTemplate = forwardRef<HTMLDivElement, MatchDayTemplateProps>(
-  ({ date, time, location, photo, homeLogo, awayLogo }, ref) => {
+  ({ date, time, location, photo, homeLogo, awayLogo, teamVersion }, ref) => {
     const photoUrl = photo instanceof File ? URL.createObjectURL(photo) : photo;
 
     return (
@@ -28,6 +29,13 @@ const MatchDayTemplate = forwardRef<HTMLDivElement, MatchDayTemplateProps>(
             </div>
             <h1 className="matchday-data_location">{location}</h1>
           </div>
+          {teamVersion === 'ntmk' && (
+            <h2 className="team-name">Уралочка-НТМК</h2>
+          )}
+          {teamVersion === 'urgau' && (
+            <h2 className="team-name">Уралочка-2-УрГЭУ</h2>
+          )}
+
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 export type FieldType = 'text' | 'image' | 'date' | 'time' | 'custom-date' 
-                      | 'logo-selector' | 'player-photo-selector' | 'number' |'role';
+                      | 'logo-selector' | 'player-photo-selector' | 'number' |'role' | 'toggle-team';
 
 export interface TemplateField {
   id: string;

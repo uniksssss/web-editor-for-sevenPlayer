@@ -4,9 +4,9 @@ import LogoSelector from '../logoSelector/logoSelector';
 import PlayerPhotoSelector from '../playerPhotoSelector/playerPhotoSelector';
 
 interface SidebarProps {
-    fields: TemplateField[];
-    formData: Record<string, any>;
-    onChange: (fieldId: string, value: any) => void;
+  fields: TemplateField[];
+  formData: Record<string, any>;
+  onChange: (fieldId: string, value: any) => void;
 }
 
 export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
@@ -110,6 +110,31 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         onChange={(e) => onChange(field.id, e.target.value)}
                         placeholder={label}>
                     </input>
+                );
+            case 'toggle-team':
+                return (
+                    <div className="toggle-switch">
+                    <label>
+                        <input
+                        type="radio"
+                        name="teamVersion"
+                        value="ntmk"
+                        checked={formData[field.id] === 'ntmk'}
+                        onChange={() => onChange(field.id, 'ntmk')}
+                        />
+                        Уралочка-НТМК
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="teamVersion"
+                        value="urgau"
+                        checked={formData[field.id] === 'urgau'}
+                        onChange={() => onChange(field.id, 'urgau')}
+                        />
+                        Уралочка-2-УрГЭУ
+                    </label>
+                    </div>
                 );
             default:
                 return null;

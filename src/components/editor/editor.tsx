@@ -69,10 +69,10 @@ const handleDownload = async () => {
       const clonedElement = clonedDoc.querySelector('.template') as HTMLElement;
       if (clonedElement) {
         const playerPhotos = clonedElement.querySelectorAll('.birthday-player-photo, .matchday-player-photo');
-        playerPhotos.forEach(img => {
-          const imgElement = img as HTMLImageElement;
-          imgElement.style.transform = 'translateX(-50%)';
-        });
+            playerPhotos.forEach(img => {
+            const imgElement = img as HTMLImageElement;
+            imgElement.style.transform = 'translateX(-50%)';
+          });
 
         const logos = clonedElement.querySelectorAll('.logo_home, .logo_away');
         logos.forEach(img => {

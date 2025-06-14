@@ -21,6 +21,7 @@ const logoNamesMap: Record<string, string> = {
     leningradka: 'Ленинградка',
     zarechye: 'Заречье',
     enisey: 'Енисей',
+    loko: 'Локомотив',
     dinamoMetar: 'Динамо-Метар',
     dinamoAkBars: 'Динамо-Ак Барс',
     dinamoKrasnodar: 'Динамо-Краснодар',
