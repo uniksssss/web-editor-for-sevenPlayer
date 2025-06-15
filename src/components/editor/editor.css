@@ -20,9 +20,17 @@
     color: white;
     background-color: #259B81;
     border: none;
-    margin: 20px;
+    margin: 20px 20px 4px 20px
 }
 
 .editor_button:hover {
     background-color: #1b876f;
 }
+
+.validation-error {
+  color: red;
+  margin-top: 0px;
+  font-size: 14px;
+  margin-left: 20px;
+}
+

@@ -53,3 +53,14 @@
 .date-inputs select {
   flex: 1;
 }
+
+.toggle-switch{
+  display: flex;
+  gap: 16px;
+}
+
+.required-marker {
+  color: red;
+  margin-left: 4px;
+}
+

@@ -7,7 +7,7 @@ type BirthdayTemplateProps = {
   firstName?: string;
   lastName?: string;
   photo?: File | string;
-  playerNumber: number;
+  playerNumber?: number;
   playerRole: string;
 };
 
@@ -30,9 +30,12 @@ export const BirthdayTemplate = forwardRef<HTMLDivElement, BirthdayTemplateProps
           <img src={birthdayTemplate} alt="" className="background" />
           {photoUrl && <img src={photoUrl} alt="" className="birthday-player-photo" />}
           <img src={obj} className="birthday-obj"></img>
-          <div className="player-number-container">
-            <p className="player-number">#{playerNumber}</p>
-          </div>
+          {playerNumber !== undefined && (
+            <div className="player-number-container">
+              <p className="player-number">#{playerNumber}</p>
+            </div>
+          )}
+
           {translatedRole && (
             <p className="player-role">{translatedRole}</p>
           )}

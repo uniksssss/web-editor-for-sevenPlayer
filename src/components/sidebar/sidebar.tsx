@@ -11,7 +11,12 @@ interface SidebarProps {
 
 export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
     const renderField = (field: TemplateField) => {
-        const [label, hint] = field.label.split(' (');
+    const [label, hint] = field.label.split(' (');
+    const value = formData[field.id];
+    const showError = field.required && !value;
+
+    const inputClass = showError ? 'input-error' : '';
+
 
         switch (field.type) {
             case 'text':
@@ -21,6 +26,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         value={formData[field.id] || ''}
                         onChange={(e) => onChange(field.id, e.target.value)}
                         placeholder={label}
+                        className={inputClass}
                     />
                 );
             case 'image':
@@ -34,6 +40,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                                 onChange(field.id, file);
                             }
                         }}
+                        className={inputClass}
                     />
                 );
             case 'time':
@@ -42,6 +49,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         type="time"
                         value={formData[field.id] || ''}
                         onChange={(e) => onChange(field.id, e.target.value)}
+                        className={inputClass}
                     />
                 );
             case 'custom-date':
@@ -54,10 +62,12 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                             placeholder="День"
                             value={formData.day || ''}
                             onChange={(e) => onChange('day', e.target.value)}
+                            className={inputClass}
                         />
                         <select
                             value={formData.month || ''}
                             onChange={(e) => onChange('month', e.target.value)}
+                            className={inputClass}
                         >
                             <option value="">Месяц</option>
                             <option value="01">Январь</option>
@@ -93,6 +103,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                 return(
                     <select value={formData.month || ''}
                             onChange={(e) => onChange(field.id, e.target.value)}
+                            className={inputClass}
                     >
                         <option value="">Выберите амплуа</option>
                         <option value="attacker">Нападающая</option>
@@ -108,7 +119,9 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         type='number'
                         value={formData[field.id] || ''}
                         onChange={(e) => onChange(field.id, e.target.value)}
-                        placeholder={label}>
+                        placeholder={label}
+                        className={inputClass}
+                    >
                     </input>
                 );
             case 'toggle-team':
@@ -121,6 +134,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         value="ntmk"
                         checked={formData[field.id] === 'ntmk'}
                         onChange={() => onChange(field.id, 'ntmk')}
+                        className={inputClass}
                         />
                         Уралочка-НТМК
                     </label>
@@ -131,6 +145,7 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                         value="urgau"
                         checked={formData[field.id] === 'urgau'}
                         onChange={() => onChange(field.id, 'urgau')}
+                        className={inputClass}
                         />
                         Уралочка-2-УрГЭУ
                     </label>
@@ -149,7 +164,10 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                 
                 return (
                     <div key={field.id} className="field">
-                        <label>{label}</label>
+                        <label>
+                            {label} {field.required && <span className="required-marker">*</span>}
+                        </label>
+
                         {formattedHint && <span className="field-hint">{formattedHint}</span>}
                         {renderField(field)}
                     </div>

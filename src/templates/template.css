@@ -8,12 +8,11 @@
 
 .template {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
+    overflow: visible;
     width: 330px;
     height: 330px;
-    margin: 0;
-    padding: 0;
+    background-color: white;
+    contain: layout;
 }
 
 .template img.background {
@@ -44,6 +43,7 @@
     object-position: center;
     transform: translateX(-50%);
     z-index: 0;
+    box-sizing: border-box !important;
 }
 
 .birthday-obj {
@@ -60,9 +60,13 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
-    object-position: center;
     transform: translateX(-50%);
+    z-index: 1;
+    box-sizing: border-box;
+    background-color: transparent; /* Важно для прозрачности */
+
 }
+
 
 .birthday-name {
     position: absolute;

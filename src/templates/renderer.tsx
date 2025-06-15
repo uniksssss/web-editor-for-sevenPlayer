@@ -9,7 +9,7 @@ export const renderTemplate = (templateId: string, values: Record<string, any>) 
     case 'match-day':
       return <MatchDayTemplate  {...values} />;
     case 'birthday':
-      return <BirthdayTemplate playerNumber={0} playerRole={""} {...values} />;
+      return <BirthdayTemplate playerRole={""} {...values} />;
     case 'score':
       return <ScoreTemplate mainHomeScore={0} mainAwayScore={0} extraScore={"00:00"} {...values}></ScoreTemplate>
     case 'statistic':

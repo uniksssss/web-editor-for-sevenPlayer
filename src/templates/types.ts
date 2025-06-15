@@ -6,6 +6,7 @@ export interface TemplateField {
   label: string;
   type: FieldType;
   defaultValue?: string;
+  required?: boolean;
 }
 
 export interface TemplateConfig {
