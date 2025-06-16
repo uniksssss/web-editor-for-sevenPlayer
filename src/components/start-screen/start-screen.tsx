@@ -1,7 +1,8 @@
 import Header from "../header/header"
 import NavCard from "../nav-card/nav-card"
 import '../start-screen/start-screen.css'
-import { scoreTemplate, birthdayTemplate, matchDayTemplate, statisticTemplate } from "../../assets/cards/cards"
+import { scoreTemplate, birthdayTemplate, matchDayTemplate,
+    statisticTemplate, welcome, thanksTemplate } from "../../assets/cards/cards"
 
 export default function StartScreen(){
     return(
@@ -14,6 +15,8 @@ export default function StartScreen(){
                     <NavCard image={birthdayTemplate} title="День рождения" to="/edit/birthday"/>
                     <NavCard image={scoreTemplate} title="Счёт игры" to="/edit/score"/>
                     <NavCard image={statisticTemplate} title="Статистика игры" to="/edit/statistic"/>
+                    <NavCard image={welcome} title="Добро пожаловать" to="/edit/welcome"/>
+                    <NavCard image={thanksTemplate} title="Спасибо за игру" to="/edit/thanks"/>
                 </div>
             </div>
         </>

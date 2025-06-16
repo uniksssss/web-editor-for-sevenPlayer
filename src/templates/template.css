@@ -46,7 +46,7 @@
     box-sizing: border-box !important;
 }
 
-.birthday-obj {
+.birthday-obj, .thanks-obj {
     position: absolute;
     bottom: 0px;
     width: 330px;
@@ -278,4 +278,128 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 90px;
     grid-row-gap: 7px;
+}
+
+.welcome-name-surname{
+    position: absolute;
+    bottom: 22px;
+    left: 14px;
+    display: flex;
+    gap: 8px;
+    color: #BFFF00;
+}   
+
+.welcome-name, .welcome-lastname{
+    font-size: 24px;
+}
+
+.welcome_player-role_container{
+    position: absolute;
+    bottom: 149px;
+    right: 0px;
+    width: 156px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome_player-role{
+    color: white;
+    font-size: 15px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.welcome_logo_home{
+    position: absolute;
+    max-width: 52px;
+    top: 38px;
+    right: 100px;
+    z-index: 1;
+}
+
+.welcome_player-photo{
+    position: absolute;
+    bottom: 107px;
+    left: 96px;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.thanks_name{
+    display: flex;
+    justify-content: center;
+}
+
+.thanks-name{
+    position: absolute;
+    bottom: 70px;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+
+.thanks-lastname{
+    position: absolute;
+    bottom: 35px;
+    font-size: 34px;
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+
+.thanks_player-role{
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Helvetica, sans-serif;
+    color: #BFFF00;
+    font-size: 14px;
+}
+
+.thanks_player-number-container{
+    border-radius: 500px;
+    background-color: #FF0033;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    bottom: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-28deg);
+
+}
+
+.thanks_player-number{
+    color:#BFFF00;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.thanks-player-photo{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-50%);
+    z-index: 0;
+    box-sizing: border-box !important;
 }

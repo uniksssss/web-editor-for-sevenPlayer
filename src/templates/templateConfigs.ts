@@ -64,4 +64,29 @@ export const templates: TemplateConfig[] = [
       { id: 'awayTrick', label: 'Приём команды гостей', type: 'number', required: true },
     ],
   },
+  {
+    id: 'welcome',
+    name: 'Добро пожаловать',
+    previewImage: '/assets/cards/welcomeTemplate.png',
+    fields: [
+      { id: 'firstName', label: 'Имя', type: 'text', required: true },
+      { id: 'lastName', label: 'Фамилия', type: 'text', required: true },
+      { id: 'homeLogo', label: 'Логотип предыдущей команды', type: 'logo-selector', required: true },
+      { id: 'playerRole', label: 'Амплуа', type: 'role' },
+      { id: 'photo', label: 'Фото', type: 'image', required: true },
+    ],
+  },
+  {
+    id: 'thanks',
+    name: 'Спасибо за игру',
+    previewImage: '/assets/cards/thanksTemplate.png',
+    fields: [
+      { id: 'firstName', label: 'Имя', type: 'text', required: true },
+      { id: 'lastName', label: 'Фамилия', type: 'text', required: true },
+      { id: 'playerNumber', label: 'Номер', type: 'number' },
+      { id: 'playerRole', label: 'Амплуа', type: 'role' },
+      { id: 'photo', label: 'Фото (при добавлении своего фото заранее удаляйте фон)',
+        type: 'player-photo-selector', required: true },
+    ],
+  },
 ];

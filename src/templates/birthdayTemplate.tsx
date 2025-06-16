@@ -8,7 +8,7 @@ type BirthdayTemplateProps = {
   lastName?: string;
   photo?: File | string;
   playerNumber?: number;
-  playerRole: string;
+  playerRole?: string;
 };
 
 const roleTranslations: Record<string, string> = {

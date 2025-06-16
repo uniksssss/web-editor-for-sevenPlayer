@@ -73,7 +73,7 @@ const handleDownload = async () => {
     return;
   }
 
-  setValidationError(''); // Сброс ошибки, если всё ок
+  setValidationError('');
 
   if (!previewRef.current) return;
   const templateElement = previewRef.current.querySelector('.template') as HTMLElement;

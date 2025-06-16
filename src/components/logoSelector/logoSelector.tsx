@@ -32,7 +32,7 @@ export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorPro
     const [isOpen, setIsOpen] = useState(false);
 
     const logos = useMemo(() => {
-        return Object.entries(logoImports).map(([path, url]) => {
+    const allLogos = Object.entries(logoImports).map(([path, url]) => {
             const id = path
                 .split('/')
                 .pop()!
@@ -44,7 +44,14 @@ export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorPro
                 path: url as string,
             };
         });
+
+        return allLogos.sort((a, b) => {
+            if (a.id === 'uralochka') return -1;
+            if (b.id === 'uralochka') return 1;
+            return 0;
+        });
     }, []);
+
 
     return (
         <div className="logo-selector">
