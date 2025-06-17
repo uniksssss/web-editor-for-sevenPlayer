@@ -6,6 +6,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'HelveticaNeueBold';
+    src: url('/fonts/HelveticaNeueBold.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .template-wrapper {
     display: flex;
     justify-content: center;
@@ -103,8 +111,9 @@
     transform: translateX(-50%);
     color: #FF0033;
     font-size: 11px;
-    font-family: "Helvetica Neue";
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     font-weight: bold;
+    text-align: center;
     text-wrap: nowrap;
     width: 300px;
 }
@@ -120,7 +129,7 @@
     box-sizing: border-box;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Helvetica Neue"
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
 }
 
 .matchday-row {
@@ -135,7 +144,7 @@
     text-align: center;
     font-size: 10px;
     margin: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     font-weight: 200;
 }
 
@@ -179,14 +188,14 @@
 
 .player-number {
     color: #FF0033;
-    font-family: "Helvetica Neue";
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
 }
 
 .player-role {
     position: absolute;
     bottom: 5px;
     left: 10px;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     color: #16503B;
     font-size: 14px;
 }
@@ -320,7 +329,7 @@
 .welcome_player-role {
     color: white;
     font-size: 15px;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -357,7 +366,7 @@
     align-items: center;
     font-size: 34px;
     font-weight: 600;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     color: white;
 }
 
@@ -366,7 +375,7 @@
     bottom: 35px;
     font-size: 34px;
     font-weight: 600;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     color: white;
 }
 
@@ -375,7 +384,7 @@
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     color: #BFFF00;
     font-size: 14px;
 }
@@ -461,7 +470,7 @@
     text-align: center;
     font-size: 10px;
     margin: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     font-weight: 600;
     color: white;
 }
@@ -485,7 +494,7 @@
 
 .schedule_phrase {
     position: absolute;
-    font-family: Helvetica, sans-serif;
+    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
     left: 50%;
     top: 130px;
     text-align: center;
