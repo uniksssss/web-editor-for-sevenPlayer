@@ -61,14 +61,35 @@ export default function Editor() {
     }
   };
 
+  const isValidDate = (dayStr: string, monthStr: string): boolean => {
+    const day = Number(dayStr);
+    const month = Number(monthStr);
+
+    if (!day || !month) return false;
+    if (month < 1 || month > 12) return false;
+    if (day < 1) return false;
+
+    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if (day > daysInMonth[month - 1]) return false;
+
+    return true;
+  };
+
   const validateFormData = () => {
     if (!template) return [];
 
-    return template.fields
+    const missingFields = template.fields
       .filter((field) => field.required)
       .filter((field) => {
         if (field.type === "custom-date") {
-          return !formData[`${field.id}_day`] || !formData[`${field.id}_month`];
+          const day = formData[`${field.id}_day`];
+          const month = formData[`${field.id}_month`];
+          if (!day || !month) return true;
+
+          if (!isValidDate(day, month)) return true;
+
+          return false;
         }
 
         const value = formData[field.id];
@@ -80,13 +101,16 @@ export default function Editor() {
         return value === undefined || value === null;
       })
       .map((field) => field.label);
+    return missingFields;
   };
 
   const handleDownload = async () => {
     const missingFields = validateFormData();
 
     if (missingFields.length > 0) {
-      setValidationError("Пожалуйста, заполните обязательные поля");
+      setValidationError(
+        "Пожалуйста, заполните обязательные поля или проверьте на"
+      );
       return;
     }
 

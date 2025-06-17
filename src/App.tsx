@@ -6,15 +6,13 @@ import { AppRoute } from "./const";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path={AppRoute.Start} element={<StartScreen />} />
-          <Route path="/edit/:templateId" element={<Editor />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path={AppRoute.Start} element={<StartScreen />} />
+        <Route path="/edit/:templateId" element={<Editor />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
