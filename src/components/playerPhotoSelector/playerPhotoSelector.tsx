@@ -21,7 +21,6 @@ const playerNamesMap: Record<string, string> = {
   sokolova: "Соколова",
   bessonova: "Бессонова",
   voropaeva: "Воропаева",
-  cernyseva: "Чернышева",
   protopopova: "Протопопова",
   shelkovkina: "Шелковкина",
   musienko: "Мусиенко",
