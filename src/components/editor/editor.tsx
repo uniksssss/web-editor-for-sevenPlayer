@@ -49,8 +49,9 @@ export default function Editor() {
     .filter((field) => field.required)
     .filter((field) => {
       if (field.type === 'custom-date') {
-        return !formData.day || !formData.month;
+        return !formData[`${field.id}_day`] || !formData[`${field.id}_month`];
       }
+
 
       const value = formData[field.id];
 
@@ -108,15 +109,26 @@ const handleDownload = async () => {
   }
 };
 
+function transformFormData(formData: Record<string, any>) {
+    const formatDate = (day: string, month: string) =>
+      day && month ? `${day.padStart(2, '0')}.${month.padStart(2, '0')}` : '';
 
-  const formattedDate = formData.day && formData.month
-    ? `${formData.day.toString().padStart(2, '0')}/${formData.month.toString().padStart(2, '0')}`
-    : '';
+    return {
+      ...formData,
+      date: formatDate(formData.date_day, formData.date_month),
+      date1: formatDate(formData.date1_day, formData.date1_month),
+      time1: formData.date1_time || '',
+      date2: formatDate(formData.date2_day, formData.date2_month),
+      time2: formData.date2_time || '',
+      date3: formatDate(formData.date3_day, formData.date3_month),
+      time3: formData.date3_time || '',
+      date4: formatDate(formData.date4_day, formData.date4_month),
+      time4: formData.date4_time || '',
+    };
+  }
 
-  const formDataWithDate = {
-    ...formData,
-    date: formattedDate,
-  };
+
+  const formDataWithDate = transformFormData(formData);
 
   return (
     <>
@@ -126,7 +138,13 @@ const handleDownload = async () => {
           {renderTemplate(template.id, formDataWithDate)}
         </div>
 
-        <Sidebar fields={template.fields} formData={formData} onChange={handleChange} />
+        <Sidebar
+          templateId={template.id}
+          fields={template.fields}
+          formData={formData}
+          onChange={handleChange}
+        />
+
         <div className="editor-actions">
           <button className="editor_button" onClick={handleDownload}>
             Скачать изображение

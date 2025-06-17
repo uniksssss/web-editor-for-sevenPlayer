@@ -17,3 +17,11 @@
     grid-template-columns: repeat(2, auto);
     gap: 20px;
 }
+
+@media screen and (width > 750px){
+    .start_wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+}
+}

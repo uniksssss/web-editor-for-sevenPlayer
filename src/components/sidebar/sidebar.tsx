@@ -4,12 +4,13 @@ import LogoSelector from '../logoSelector/logoSelector';
 import PlayerPhotoSelector from '../playerPhotoSelector/playerPhotoSelector';
 
 interface SidebarProps {
+  templateId: string;
   fields: TemplateField[];
   formData: Record<string, any>;
   onChange: (fieldId: string, value: any) => void;
 }
 
-export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
+export default function Sidebar({ fields, formData, onChange, templateId }: SidebarProps) {
     const renderField = (field: TemplateField) => {
     const [label, hint] = field.label.split(' (');
     const value = formData[field.id];
@@ -53,38 +54,49 @@ export default function Sidebar({ fields, formData, onChange }: SidebarProps) {
                     />
                 );
             case 'custom-date':
+                { const isSchedule = templateId === 'schedule';
+
                 return (
-                    <div className="date-inputs">
+                    <div className={`date-inputs ${isSchedule ? 'inline-group' : ''}`}>
+                    <input
+                        type="number"
+                        min="1"
+                        max="31"
+                        placeholder="День"
+                        value={formData[`${field.id}_day`] || ''}
+                        onChange={(e) => onChange(`${field.id}_day`, e.target.value)}
+                        className={inputClass}
+                    />
+                    <select
+                        value={formData[`${field.id}_month`] || ''}
+                        onChange={(e) => onChange(`${field.id}_month`, e.target.value)}
+                        className={inputClass}
+                    >
+                        <option value="">Месяц</option>
+                        <option value="01">Январь</option>
+                        <option value="02">Февраль</option>
+                        <option value="03">Март</option>
+                        <option value="04">Апрель</option>
+                        <option value="05">Май</option>
+                        <option value="06">Июнь</option>
+                        <option value="07">Июль</option>
+                        <option value="08">Август</option>
+                        <option value="09">Сентябрь</option>
+                        <option value="10">Октябрь</option>
+                        <option value="11">Ноябрь</option>
+                        <option value="12">Декабрь</option>
+                    </select>
+                    {isSchedule && (
                         <input
-                            type="number"
-                            min="1"
-                            max="31"
-                            placeholder="День"
-                            value={formData.day || ''}
-                            onChange={(e) => onChange('day', e.target.value)}
+                            type="time"
+                            value={formData[`${field.id}_time`] || ''}
+                            onChange={(e) => onChange(`${field.id}_time`, e.target.value)}
                             className={inputClass}
                         />
-                        <select
-                            value={formData.month || ''}
-                            onChange={(e) => onChange('month', e.target.value)}
-                            className={inputClass}
-                        >
-                            <option value="">Месяц</option>
-                            <option value="01">Январь</option>
-                            <option value="02">Февраль</option>
-                            <option value="03">Март</option>
-                            <option value="04">Апрель</option>
-                            <option value="05">Май</option>
-                            <option value="06">Июнь</option>
-                            <option value="07">Июль</option>
-                            <option value="08">Август</option>
-                            <option value="09">Сентябрь</option>
-                            <option value="10">Октябрь</option>
-                            <option value="11">Ноябрь</option>
-                            <option value="12">Декабрь</option>
-                        </select>
+                    )}
                     </div>
-                );
+                ); }
+
             case 'logo-selector':
                 return (
                     <LogoSelector

@@ -4,6 +4,7 @@ import { ScoreTemplate } from "./scoreTemplate";
 import { StatisticTemplate } from "./statisticTemplate";
 import { WelcomeTemplate } from "./welcomeTemplate";
 import { ThanksTemplate } from "./thanksTemplate";
+import { ScheduleTemplate } from "./scheduleTemplate";
 
 
 export const renderTemplate = (templateId: string, values: Record<string, any>) => {
@@ -20,6 +21,8 @@ export const renderTemplate = (templateId: string, values: Record<string, any>) 
       return <WelcomeTemplate {...values}/>
     case 'thanks':
       return <ThanksTemplate {...values}/>
+    case 'schedule':
+      return <ScheduleTemplate {...values}/>
     default:
       return <p>Нет шаблона</p>;
   }

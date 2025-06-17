@@ -64,3 +64,16 @@
   margin-left: 4px;
 }
 
+.inline-group {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.inline-group input[type="number"],
+.inline-group select,
+.inline-group input[type="time"] {
+  width: auto;
+  flex: none;
+}
+
