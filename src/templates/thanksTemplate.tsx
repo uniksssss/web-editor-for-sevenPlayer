@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { thanksTemplate } from "../assets/cards/cards";
-import './template.css';
-import obj from "..//assets/cards/thanksObj.png"
+import "./template.css";
+import obj from "..//assets/cards/thanksObj.png";
 
 type ThanksTemplateProps = {
   firstName?: string;
@@ -12,11 +12,11 @@ type ThanksTemplateProps = {
 };
 
 const roleTranslations: Record<string, string> = {
-    attacker: "Нападающая",
-    blocker: "Блокирующая",
-    libero: "Либеро",
-    binder: "Связующая",
-    coach: "Тренер",
+  attacker: "Нападающая",
+  blocker: "Блокирующая",
+  libero: "Либеро",
+  binder: "Связующая",
+  coach: "Тренер",
 };
 
 export const ThanksTemplate = forwardRef<HTMLDivElement, ThanksTemplateProps>(
@@ -28,7 +28,9 @@ export const ThanksTemplate = forwardRef<HTMLDivElement, ThanksTemplateProps>(
       <div className="template-wrapper">
         <div className="template thanks" ref={ref}>
           <img src={thanksTemplate} alt="" className="background" />
-          {photoUrl && <img src={photoUrl} alt="" className="thanks-player-photo" />}
+          {photoUrl && (
+            <img src={photoUrl} alt="" className="thanks-player-photo" />
+          )}
           <img src={obj} className="thanks-obj"></img>
           {playerNumber !== undefined && (
             <div className="thanks_player-number-container">
@@ -49,4 +51,4 @@ export const ThanksTemplate = forwardRef<HTMLDivElement, ThanksTemplateProps>(
   }
 );
 
-ThanksTemplate  .displayName = 'BirthdayTemplate';
+ThanksTemplate.displayName = "BirthdayTemplate";

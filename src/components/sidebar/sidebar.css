@@ -54,7 +54,7 @@
   flex: 1;
 }
 
-.toggle-switch{
+.toggle-switch {
   display: flex;
   gap: 16px;
 }

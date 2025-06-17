@@ -1,21 +1,21 @@
 import { forwardRef } from "react";
 import { welcome } from "../assets/cards/cards";
-import './template.css';
+import "./template.css";
 
 type WelcomeTemplateProps = {
   firstName?: string;
   lastName?: string;
-  homeLogo?: string; 
+  homeLogo?: string;
   photo?: File | string;
   playerRole?: string;
 };
 
 const roleTranslations: Record<string, string> = {
-    attacker: "Нападающая",
-    blocker: "Блокирующая",
-    libero: "Либеро",
-    binder: "Связующая",
-    coach: "Тренер",
+  attacker: "Нападающая",
+  blocker: "Блокирующая",
+  libero: "Либеро",
+  binder: "Связующая",
+  coach: "Тренер",
 };
 
 export const WelcomeTemplate = forwardRef<HTMLDivElement, WelcomeTemplateProps>(
@@ -27,11 +27,15 @@ export const WelcomeTemplate = forwardRef<HTMLDivElement, WelcomeTemplateProps>(
       <div className="template-wrapper">
         <div className="template welcome" ref={ref}>
           <img src={welcome} alt="" className="background" />
-          {photoUrl && <img src={photoUrl} alt="" className="welcome_player-photo" />}
-          {homeLogo && <img src={homeLogo} alt="" className="welcome_logo_home" />}
+          {photoUrl && (
+            <img src={photoUrl} alt="" className="welcome_player-photo" />
+          )}
+          {homeLogo && (
+            <img src={homeLogo} alt="" className="welcome_logo_home" />
+          )}
           <div className="welcome_player-role_container">
             {translatedRole && (
-                <p className="welcome_player-role">{translatedRole}</p>
+              <p className="welcome_player-role">{translatedRole}</p>
             )}
           </div>
           <div className="welcome-name-surname">
@@ -44,4 +48,4 @@ export const WelcomeTemplate = forwardRef<HTMLDivElement, WelcomeTemplateProps>(
   }
 );
 
-WelcomeTemplate.displayName = 'WelcomeTemplate';
+WelcomeTemplate.displayName = "WelcomeTemplate";

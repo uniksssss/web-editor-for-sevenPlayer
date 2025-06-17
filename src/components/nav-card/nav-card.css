@@ -1,4 +1,4 @@
-.navCard-container{
+.navCard-container {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -7,12 +7,12 @@
     color: inherit;
 }
 
-.navCard_img{
+.navCard_img {
     max-width: 140px;
     max-height: 140px;
     border: 1px solid #16503B;
 }
 
-.navCard_title{
+.navCard_title {
     text-decoration: none;
 }

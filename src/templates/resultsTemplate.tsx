@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { resultsTemplate } from "../assets/cards/cards.ts";
-import './template.css';
+import "./template.css";
 
 type ResultsBlock = {
   mainHomeScore: number;
@@ -15,8 +15,6 @@ type ResultsTemplateProp = {
   results: ResultsBlock[];
 };
 
-
-
 export const ResultsTemplate = forwardRef<HTMLDivElement, ResultsTemplateProp>(
   ({ results, tour }, ref) => {
     return (
@@ -25,24 +23,32 @@ export const ResultsTemplate = forwardRef<HTMLDivElement, ResultsTemplateProp>(
           <img src={resultsTemplate} alt="" className="background" />
           <div className="results-container">
             {results.map((result, index) => (
-                <div key={index} className="results_row">
+              <div key={index} className="results_row">
                 <div className="results_logo_col">
-                    {result.homeLogo && <img src={result.homeLogo} className="results_logo" />}
+                  {result.homeLogo && (
+                    <img src={result.homeLogo} className="results_logo" />
+                  )}
                 </div>
                 <div className="results_score-block">
-                    <div className="result_score-row">
-                    <h1 className="results_mainHomeScore">{result.mainHomeScore}</h1>
+                  <div className="result_score-row">
+                    <h1 className="results_mainHomeScore">
+                      {result.mainHomeScore}
+                    </h1>
                     <h1> : </h1>
-                    <h1 className="results_mainAwayScore">{result.mainAwayScore}</h1>
-                    </div>
-                    <p className="results_extraScore">{result.extraScore}</p>
+                    <h1 className="results_mainAwayScore">
+                      {result.mainAwayScore}
+                    </h1>
+                  </div>
+                  <p className="results_extraScore">{result.extraScore}</p>
                 </div>
                 <div className="results_logo_col">
-                    {result.awayLogo && <img src={result.awayLogo} className="results_logo" />}
+                  {result.awayLogo && (
+                    <img src={result.awayLogo} className="results_logo" />
+                  )}
                 </div>
-                </div>
+              </div>
             ))}
-            </div>
+          </div>
 
           <p className="results_tour-number">{tour} тур</p>
         </div>
@@ -50,4 +56,3 @@ export const ResultsTemplate = forwardRef<HTMLDivElement, ResultsTemplateProp>(
     );
   }
 );
-

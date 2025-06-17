@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     color: #16503B;
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,13 +19,13 @@ body{
     margin-bottom: 10px;
 }
 
-.header_name{
+.header_name {
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     color: #16503B;
 }
 
-.header_logo{
+.header_logo {
     max-width: 87px;
 }

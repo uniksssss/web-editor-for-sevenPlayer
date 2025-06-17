@@ -46,7 +46,8 @@
     box-sizing: border-box !important;
 }
 
-.birthday-obj, .thanks-obj {
+.birthday-obj,
+.thanks-obj {
     position: absolute;
     bottom: 0px;
     width: 330px;
@@ -63,8 +64,7 @@
     transform: translateX(-50%);
     z-index: 1;
     box-sizing: border-box;
-    background-color: transparent; /* Важно для прозрачности */
-
+    background-color: transparent;
 }
 
 
@@ -280,20 +280,21 @@
     grid-row-gap: 7px;
 }
 
-.welcome-name-surname{
+.welcome-name-surname {
     position: absolute;
     bottom: 22px;
     left: 14px;
     display: flex;
     gap: 8px;
     color: #BFFF00;
-}   
+}
 
-.welcome-name, .welcome-lastname{
+.welcome-name,
+.welcome-lastname {
     font-size: 24px;
 }
 
-.welcome_player-role_container{
+.welcome_player-role_container {
     position: absolute;
     bottom: 149px;
     right: 0px;
@@ -304,7 +305,7 @@
     align-items: center;
 }
 
-.welcome_player-role{
+.welcome_player-role {
     color: white;
     font-size: 15px;
     font-family: Helvetica, sans-serif;
@@ -312,7 +313,7 @@
     letter-spacing: 1px;
 }
 
-.welcome_logo_home{
+.welcome_logo_home {
     position: absolute;
     max-width: 52px;
     top: 38px;
@@ -320,7 +321,7 @@
     z-index: 1;
 }
 
-.welcome_player-photo{
+.welcome_player-photo {
     position: absolute;
     bottom: 107px;
     left: 96px;
@@ -333,12 +334,12 @@
     background-color: transparent;
 }
 
-.thanks_name{
+.thanks_name {
     display: flex;
     justify-content: center;
 }
 
-.thanks-name{
+.thanks-name {
     position: absolute;
     bottom: 70px;
     align-items: center;
@@ -348,7 +349,7 @@
     color: white;
 }
 
-.thanks-lastname{
+.thanks-lastname {
     position: absolute;
     bottom: 35px;
     font-size: 34px;
@@ -357,7 +358,7 @@
     color: white;
 }
 
-.thanks_player-role{
+.thanks_player-role {
     position: absolute;
     bottom: 16px;
     left: 50%;
@@ -367,7 +368,7 @@
     font-size: 14px;
 }
 
-.thanks_player-number-container{
+.thanks_player-number-container {
     border-radius: 500px;
     background-color: #FF0033;
     padding: 5px;
@@ -383,13 +384,13 @@
 
 }
 
-.thanks_player-number{
-    color:#BFFF00;
+.thanks_player-number {
+    color: #BFFF00;
     font-size: 20px;
     font-weight: 600;
 }
 
-.thanks-player-photo{
+.thanks-player-photo {
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -404,7 +405,7 @@
     box-sizing: border-box !important;
 }
 
-.schedule-player-photo{
+.schedule-player-photo {
     position: absolute;
     top: 0;
     left: 50%;
@@ -418,7 +419,7 @@
     background-color: transparent;
 }
 
-.schedule-data_location-container{
+.schedule-data_location-container {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -426,7 +427,7 @@
     background-color: #FF0033;
 }
 
-.schedule-data{
+.schedule-data {
     padding: 4px 8px;
     background-color: #BFFF00;
     display: flex;
@@ -434,16 +435,17 @@
     gap: 8px;
 }
 
-.schedule-row{
+.schedule-row {
     display: flex;
-    gap:8px;
+    gap: 8px;
 }
 
-.schedule-data_date, .schedule-data_time{
+.schedule-data_date,
+.schedule-data_time {
     font-size: 14px;
 }
 
-.schedule-data_location{
+.schedule-data_location {
     text-align: center;
     font-size: 10px;
     margin: 0;
@@ -452,34 +454,36 @@
     color: white;
 }
 
-.schedule-logo_first, .schedule-logo_second{
+.schedule-logo_first,
+.schedule-logo_second {
     position: absolute;
     max-width: 36px;
     bottom: 130px;
     right: 20px;
     z-index: 1;
 }
-.schedule-logo_first{
+
+.schedule-logo_first {
     right: 54px;
 }
 
-.schedule-logo_second{
+.schedule-logo_second {
     right: 8px;
 }
 
-.schedule_phrase{
+.schedule_phrase {
     position: absolute;
     font-family: Helvetica, sans-serif;
     left: 50%;
     top: 130px;
     text-align: center;
     transform: translateX(-50%);
-    color:#16503B;
+    color: #16503B;
     font-size: 13px;
     width: 100%;
 }
 
-.schedule_teams-container{
+.schedule_teams-container {
     padding: 12px 8px;
     display: flex;
     flex-direction: column;
@@ -489,13 +493,13 @@
     gap: 11px;
 }
 
-.schedule_teams{
+.schedule_teams {
     font-size: 10px;
     font-weight: 400;
     color: #BFFF00;
 }
 
-.schedule_container{
+.schedule_container {
     display: flex;
     border: 2px solid #BFFF00;
     position: absolute;
@@ -505,18 +509,18 @@
 }
 
 .results_row {
-  display: grid;
-  grid-template-columns: 44px auto 44px; /* фикс ширина под логотипы */
-  align-items: center;
-  justify-content: center;
-  column-gap: 10px;
+    display: grid;
+    grid-template-columns: 44px auto 44px;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
 }
 
-.result_score-row{
+.result_score-row {
     display: flex;
 }
 
-.results_score-container{
+.results_score-container {
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -527,50 +531,51 @@
 }
 
 .results_score-block {
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.results_extraScore{
+.results_extraScore {
     font-size: 8px;
     white-space: nowrap;
 }
 
 .results-container {
-  position: absolute;
-  bottom: 44px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .results_logo_col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.results_logos{
+.results_logos {
     display: flex;
     gap: 134px;
 }
 
 .results_logo {
-  max-width: 44px;
-  max-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
 }
 
-.results_logo_home, .results_logo_away{
+.results_logo_home,
+.results_logo_away {
     max-width: 44px;
     z-index: 1;
 }
 
-.results_tour-number{
+.results_tour-number {
     position: absolute;
     bottom: 5px;
     left: 50%;

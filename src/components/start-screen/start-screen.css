@@ -1,4 +1,4 @@
-.start-container{
+.start-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,21 +7,21 @@
     text-align: center;
 }
 
-.start_head{
+.start_head {
     font-size: 24px;
     margin-bottom: 30px;
 }
 
-.start_wrapper{
+.start_wrapper {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 20px;
 }
 
-@media screen and (width > 750px){
-    .start_wrapper{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 20px;
-}
+@media screen and (width > 750px) {
+    .start_wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 20px;
+    }
 }

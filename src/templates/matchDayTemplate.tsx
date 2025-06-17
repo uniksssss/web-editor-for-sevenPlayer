@@ -8,7 +8,7 @@ type MatchDayTemplateProps = {
   photo?: File | string;
   homeLogo?: string;
   awayLogo?: string;
-  teamVersion?: 'ntmk' | 'urgau';
+  teamVersion?: "ntmk" | "urgau";
 };
 
 const MatchDayTemplate = forwardRef<HTMLDivElement, MatchDayTemplateProps>(
@@ -19,9 +19,11 @@ const MatchDayTemplate = forwardRef<HTMLDivElement, MatchDayTemplateProps>(
       <div className="template-wrapper">
         <div className="template matchday" ref={ref}>
           <img src={matchDayTemplate} alt="" className="background" />
-          {photoUrl && <img src={photoUrl} alt="" className="matchday-player-photo"/>}
+          {photoUrl && (
+            <img src={photoUrl} alt="" className="matchday-player-photo" />
+          )}
           {homeLogo && <img src={homeLogo} alt="" className="logo_home" />}
-          {awayLogo && <img src={awayLogo} alt="" className="logo_away"/>}
+          {awayLogo && <img src={awayLogo} alt="" className="logo_away" />}
           <div className="matchday-data">
             <div className="matchday-row">
               <h1 className="matchday-data_date">{date}</h1>
@@ -29,19 +31,18 @@ const MatchDayTemplate = forwardRef<HTMLDivElement, MatchDayTemplateProps>(
             </div>
             <h1 className="matchday-data_location">{location}</h1>
           </div>
-          {teamVersion === 'ntmk' && (
+          {teamVersion === "ntmk" && (
             <h2 className="team-name">Уралочка-НТМК</h2>
           )}
-          {teamVersion === 'urgau' && (
+          {teamVersion === "urgau" && (
             <h2 className="team-name">Уралочка-2-УрГЭУ</h2>
           )}
-
         </div>
       </div>
     );
   }
 );
 
-MatchDayTemplate.displayName = 'MatchDayTemplate';
+MatchDayTemplate.displayName = "MatchDayTemplate";
 
 export default MatchDayTemplate;
