@@ -50,8 +50,8 @@ export default function PlayerPhotoSelector({
 
   const playerPhotos = useMemo(() => {
     return Object.entries(playerPhotoImports).map(([path, url]) => {
-      const fileName = path.split("/").pop()!.split(".")[0]; // Пример: "Tica"
-      const id = fileName.toLowerCase(); // Для соответствия ключам в playerNamesMap
+      const fileName = path.split("/").pop()!.split(".")[0];
+      const id = fileName.toLowerCase();
 
       return {
         id,
