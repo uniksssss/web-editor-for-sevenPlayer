@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { resultsTemplate } from "../assets/cards/cards.ts";
 import "./template.css";
 
-type ResultsBlock = {
+export type ResultsBlock = {
   mainHomeScore: number;
   mainAwayScore: number;
   extraScore: string;

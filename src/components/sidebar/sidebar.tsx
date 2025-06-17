@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { TemplateField } from "../../templates/types";
 import "./sidebar.css";
 import LogoSelector from "../logoSelector/logoSelector";
@@ -17,7 +18,7 @@ export default function Sidebar({
   templateId,
 }: SidebarProps) {
   const renderField = (field: TemplateField) => {
-    const [label, hint] = field.label.split(" (");
+    const [label] = field.label.split(" (");
     const value = formData[field.id];
     const showError = field.required && !value;
 

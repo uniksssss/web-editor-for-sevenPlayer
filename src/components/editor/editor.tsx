@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useParams } from "react-router-dom";
 import "../editor/editor.css";
 import { renderTemplate } from "../../templates/renderer";
@@ -7,6 +8,7 @@ import Sidebar from "../sidebar/sidebar";
 import Header from "../header/header";
 import { useRef } from "react";
 import domtoimage from "dom-to-image-more";
+import type { ResultsBlock } from "../../templates/resultsTemplate";
 
 export default function Editor() {
   const { templateId } = useParams();
@@ -144,6 +146,7 @@ export default function Editor() {
   }
 
   const formDataWithDate = transformFormData(formData);
+  if (!template) return null;
 
   return (
     <>

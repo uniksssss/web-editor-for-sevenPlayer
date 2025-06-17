@@ -9,6 +9,7 @@ import { ResultsTemplate } from "./resultsTemplate";
 
 export const renderTemplate = (
   templateId: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   values: Record<string, any>
 ) => {
   switch (templateId) {
@@ -41,14 +42,7 @@ export const renderTemplate = (
     case "schedule":
       return <ScheduleTemplate {...values} />;
     case "results":
-      return (
-        <ResultsTemplate
-          mainHomeScore={0}
-          mainAwayScore={0}
-          extraScore={"00:00"}
-          {...values}
-        />
-      );
+      return <ResultsTemplate results={[]} {...values} />;
     default:
       return <p>Нет шаблона</p>;
   }
