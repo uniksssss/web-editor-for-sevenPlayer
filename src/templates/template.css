@@ -449,6 +449,7 @@
 }
 
 .schedule-data {
+    height: 96px;
     padding: 4px 8px;
     background-color: #BFFF00;
     display: flex;
@@ -494,7 +495,7 @@
 
 .schedule_phrase {
     position: absolute;
-    font-family: "HelveticaNeueBold", Helvetica, sans-serif;
+    
     left: 50%;
     top: 130px;
     text-align: center;
@@ -506,6 +507,7 @@
 
 .schedule_teams-container {
     padding: 12px 8px;
+    height: 96px;
     display: flex;
     flex-direction: column;
     justify-content: center;
