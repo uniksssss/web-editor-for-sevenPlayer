@@ -30,6 +30,7 @@ const playerPhotos = [
     { id: 'vaganova', name: 'Ваганова', path: '/src/assets/players/Vaganova.png' },
     { id: 'svydkaa', name: 'Швыдкая', path: '/src/assets/players/Svydkaa.png' },
     { id: 'fitisova', name: 'Фитисова', path: '/src/assets/players/Fitisova.png' },
+    { id: 'kuzmina', name: 'Кузьмина', path: '/src/assets/players/kuzmina.png' },
 ];
 
 export default function PlayerPhotoSelector({ onSelect, selectedPhoto }: PlayerPhotoSelectorProps) {

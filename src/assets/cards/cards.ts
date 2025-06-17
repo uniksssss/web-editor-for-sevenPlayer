@@ -5,6 +5,7 @@ import statisticTemplate from '../cards/statisticTemplate.png'
 import welcome from '../cards/welcome.png'
 import thanksTemplate from '../cards/thanksTemplate.png'
 import scheduleTemplate from '../cards/scheduleTemplate.png'
+import resultsTemplate from '../cards/resultsTemplate.png'
 
 export {scoreTemplate, birthdayTemplate, matchDayTemplate,
-    statisticTemplate, welcome, thanksTemplate, scheduleTemplate}
+    statisticTemplate, welcome, thanksTemplate, scheduleTemplate, resultsTemplate}

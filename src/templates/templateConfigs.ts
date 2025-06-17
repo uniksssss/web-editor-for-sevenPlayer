@@ -109,4 +109,36 @@ export const templates: TemplateConfig[] = [
       { id: 'photo', label: 'Фото', type: 'image', required: true },
     ],
   },
+  {
+    id: 'results',
+    name: 'Результаты тура',
+    previewImage: '/assets/cards/resultsTemplate.png',
+    fields: [
+      { id: 'mainHomeScore1', label: 'Счёт домашней команды', type: 'number', required: true },
+      { id: 'mainAwayScore1', label: 'Счёт команды гостей', type: 'number', required: true },
+      { id: 'extraScore1', label: 'Cчёт партий (вводим через пробел в формате 00:00 00:00 и т.д)', type: 'text', required: true },
+      { id: 'homeLogo1', label: 'Логотип хозяев', type: 'logo-selector', required: true },
+      { id: 'awayLogo1', label: 'Логотип гостей', type: 'logo-selector', required: true },
+
+      { id: 'mainHomeScore2', label: 'Счёт домашней команды', type: 'number', required: true },
+      { id: 'mainAwayScore2', label: 'Счёт команды гостей', type: 'number', required: true },
+      { id: 'extraScore2', label: 'Cчёт партий (вводим через пробел в формате 00:00 00:00 и т.д)', type: 'text', required: true },
+      { id: 'homeLogo2', label: 'Логотип хозяев', type: 'logo-selector', required: true },
+      { id: 'awayLogo2', label: 'Логотип гостей', type: 'logo-selector', required: true },
+
+      { id: 'mainHomeScore3', label: 'Счёт домашней команды', type: 'number', required: true },
+      { id: 'mainAwayScore3', label: 'Счёт команды гостей', type: 'number', required: true },
+      { id: 'extraScore3', label: 'Cчёт партий (вводим через пробел в формате 00:00 00:00 и т.д)', type: 'text', required: true },
+      { id: 'homeLogo3', label: 'Логотип хозяев', type: 'logo-selector', required: true },
+      { id: 'awayLogo3', label: 'Логотип гостей', type: 'logo-selector', required: true },
+
+      { id: 'mainHomeScore4', label: 'Счёт домашней команды', type: 'number', required: true },
+      { id: 'mainAwayScore4', label: 'Счёт команды гостей', type: 'number', required: true },
+      { id: 'extraScore4', label: 'Cчёт партий (вводим через пробел в формате 00:00 00:00 и т.д)', type: 'text', required: true },
+      { id: 'homeLogo4', label: 'Логотип хозяев', type: 'logo-selector', required: true },
+      { id: 'awayLogo4', label: 'Логотип гостей', type: 'logo-selector', required: true },
+
+      { id: 'tour', label: 'Номер тура', type: 'text', required: true},
+    ],
+  },
 ];

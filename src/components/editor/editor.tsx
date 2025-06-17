@@ -29,6 +29,23 @@ export default function Editor() {
     });
   };
 
+  function groupFormDataToResults(formData: Record<string, any>): ResultsBlock[] {
+  const results: ResultsBlock[] = [];
+
+  for (let i = 1; i <= 4; i++) {
+    results.push({
+      mainHomeScore: formData[`mainHomeScore${i}`],
+      mainAwayScore: formData[`mainAwayScore${i}`],
+      extraScore: formData[`extraScore${i}`],
+      homeLogo: formData[`homeLogo${i}`],
+      awayLogo: formData[`awayLogo${i}`],
+    });
+  }
+
+  return results;
+}
+
+
   const handleChange = async (fieldId: string, value: any) => {
     if (value instanceof File) {
       try {
@@ -135,7 +152,10 @@ function transformFormData(formData: Record<string, any>) {
       <Header/>
       <div className="editor-screen">
         <div className="preview" ref={previewRef}>
-          {renderTemplate(template.id, formDataWithDate)}
+          {renderTemplate(template.id, {
+            ...formDataWithDate,
+            results: groupFormDataToResults(formDataWithDate),
+          })}
         </div>
 
         <Sidebar

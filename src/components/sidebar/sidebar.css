@@ -77,3 +77,13 @@
   flex: none;
 }
 
+.logo-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.logo-field {
+  flex: 1;
+  min-width: 140px;
+}

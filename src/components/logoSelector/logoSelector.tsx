@@ -26,6 +26,18 @@ const logoNamesMap: Record<string, string> = {
     dinamoAkBars: 'Динамо-Ак Барс',
     dinamoKrasnodar: 'Динамо-Краснодар',
     proton: 'Протон',
+    korabelka: 'Корабелка',
+    lipetsk: 'Липецк',
+    murom: 'Муром',
+    mva:'МВА',
+    primorskiy:'Динамо-Приморский край',
+    sahalin:'Сахалин',
+    severyanka:'Северянка',
+    tyumen:'Тюмень',
+    ufimochka:'Уфимочка',
+    amur:'Амурские тигрицы',
+    anapa:'Динамо-Анапа',
+    atom:'Атом-курск',
 };
 
 export default function LogoSelector({ onSelect, selectedLogo }: LogoSelectorProps) {

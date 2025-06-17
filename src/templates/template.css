@@ -503,3 +503,76 @@
     bottom: 12px;
     width: 310px;
 }
+
+.results_row {
+  display: grid;
+  grid-template-columns: 44px auto 44px; /* фикс ширина под логотипы */
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.result_score-row{
+    display: flex;
+}
+
+.results_score-container{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.results_score-block {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.results_extraScore{
+    font-size: 8px;
+    white-space: nowrap;
+}
+
+.results-container {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.results_logo_col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results_logos{
+    display: flex;
+    gap: 134px;
+}
+
+.results_logo {
+  max-width: 44px;
+  max-height: 44px;
+}
+
+.results_logo_home, .results_logo_away{
+    max-width: 44px;
+    z-index: 1;
+}
+
+.results_tour-number{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}

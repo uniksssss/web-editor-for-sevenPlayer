@@ -169,22 +169,39 @@ export default function Sidebar({ fields, formData, onChange, templateId }: Side
     };
 
     return (
-        <div className="sidebar">
-            {fields.map((field) => {
-                const [label, hint] = field.label.split(' (');
-                const formattedHint = hint ? `(${hint}` : '';
-                
-                return (
-                    <div key={field.id} className="field">
-                        <label>
-                            {label} {field.required && <span className="required-marker">*</span>}
-                        </label>
+  <div className="sidebar">
+    <div className="logo-row">
+      {fields
+        .filter((field) => field.type === 'logo-selector')
+        .map((field) => (
+          <div key={field.id} className="field logo-field">
+            <label>
+              {field.label} {field.required && <span className="required-marker">*</span>}
+            </label>
+            <LogoSelector
+              selectedLogo={formData[field.id]}
+              onSelect={(logoPath) => onChange(field.id, logoPath)}
+            />
+          </div>
+        ))}
+    </div>
+        {fields
+        .filter((field) => field.type !== 'logo-selector')
+        .map((field) => {
+            const [label, hint] = field.label.split(' (');
+            const formattedHint = hint ? `(${hint}` : '';
 
-                        {formattedHint && <span className="field-hint">{formattedHint}</span>}
-                        {renderField(field)}
-                    </div>
-                );
-            })}
-        </div>
-    );
+            return (
+            <div key={field.id} className="field">
+                <label>
+                {label} {field.required && <span className="required-marker">*</span>}
+                </label>
+                {formattedHint && <span className="field-hint">{formattedHint}</span>}
+                {renderField(field)}
+            </div>
+            );
+        })}
+    </div>
+    );  
+
 }
